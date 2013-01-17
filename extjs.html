@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+
+  <title>Workshop ExtJS 4</title>
+  <meta name="description" content="Workshop ExtJS 4" />
+  <meta name="author" content="Christiano Milfont" />
+  <link rel="stylesheet" href="http://cdn.sencha.com/ext-4.1.1-gpl/resources/css/ext-all-gray.css" type="text/css">
+  
+<!--  <link rel="stylesheet" type="text/css" href="https://platform.twitter.com/embed/embed.ff268cb1fe83dd17c1ba606826968a3a.css">-->
+  
+  <link rel="stylesheet" type="text/css" href="embed.ff268cb1fe83dd17c1ba606826968a3a.css">
+  <style>
+  .sorteado {
+    background-color: #ddd!important;
+  }
+  </style>
+  
+</head>
+
+<body id="content">
+
+<script type="text/javascript" src="http://cdn.sencha.com/ext-4.1.1-gpl/ext-all.js"></script>
+
+<div id="template" style="display:none;">
+  <tpl for=".">
+  <div id="twitter-widget-2" class="twitter-tweet-rendered" lang="en" style="">
+    <div class="twt-border">
+      <blockquote data-twt-id="{id_str}" data-twt-intents="false" data-twt-product="tweetembed" class="twt-o twt-tweet h-entry twt-always-show-actions twt-pinned twt-standard">
+        <div class="h-card p-author">
+          <a class="screen-name u-url" href="https://twitter.com/{from_user}" data-screen-name="{from_user}">
+            <span class="avatar"><img src="{profile_image_url}" class="u-photo" alt=""></span>
+            <span class="p-name">{from_user_name}</span>
+            <span class="p-nickname">@<b>{from_user}</b></span>
+          </a>
+        </div>
+        <div class="e-content">
+          <p class="p-name">{text}</p>
+        </div>
+        <div class="footer">
+          <a class="view-details" href="https://twitter.com/{from_user}/statuses/{id_str}">
+            {created_at:date("d M y")}
+          </span>
+          </a>
+          <ul class="twt-actions">
+            <li><a href="https://twitter.com/intent/tweet?in_reply_to={id_str}" class="reply-action twt-intent" title="Reply"><i></i><b>Reply</b></a></li>
+            <li><a href="https://twitter.com/intent/retweet?tweet_id={id_str}" class=" retweet-action  twt-intent" title="Retweet"><i></i><b>Retweet</b></a></li>
+            <li><a href="https://twitter.com/intent/favorite?tweet_id={id_str}" class=" favorite-action  twt-intent" title="Favorite"><i></i><b>Favorite</b></a></li>
+          </ul>
+        </div>
+      </blockquote>
+    </div>
+  </div>
+  </tpl>
+</div>
+
+<div id="vencedor" style="display:none;">
+  <div id="twitter-widget-2" class="twitter-tweet-rendered" lang="en" style="">
+    <div class="twt-border">
+      <blockquote data-twt-id="{id_str}" data-twt-intents="false" data-twt-product="tweetembed" class="twt-o twt-tweet h-entry twt-always-show-actions twt-pinned twt-standard">
+        <div class="h-card p-author">
+          <a class="screen-name u-url" href="https://twitter.com/{from_user}" data-screen-name="{from_user}">
+            <span class="avatar"><img src="{profile_image_url}" class="u-photo" alt=""></span>
+            <span class="p-name">{from_user_name}</span>
+            <span class="p-nickname">@<b>{from_user}</b></span>
+          </a>
+        </div>
+      </blockquote>
+    </div>
+  </div>
+</div>
+
+
+<script type="text/javascript" src="sorteio.js"></script>
+
+</body>
+</html>
