@@ -1,0 +1,1 @@
+Exemplo de App com os princípios de boas práticas para desenvolver com ExtJS 4 https://gist.github.com/4389170
