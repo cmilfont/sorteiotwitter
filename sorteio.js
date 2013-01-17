@@ -141,7 +141,7 @@ Ext.onReady(function(){
       { xtype: "button", itemId: 'busca', text: "Listar"}
     ],
     buscar: function() {
-      this.fireEvent("busca", this.getForm().getValues());
+      this.fireEvent("buscar", this.getForm().getValues());
     },
     initComponent: function() {
       this.callParent();
@@ -153,9 +153,6 @@ Ext.onReady(function(){
     extend: "Ext.panel.Panel",
     alias: 'widget.sorteio',
     layout: "border",
-    // sortear: function() {
-    //   this.ganhadores.adicionar( this.concorrentes.sortear() );
-    // },
     criarRegiao: function() {
       return {
         xtype: 'basepanel',
@@ -172,23 +169,16 @@ Ext.onReady(function(){
         ]
       }
     },
-    // reiniciar: function(values) {
-    //   this.concorrentes.listar(values);
-    //   this.ganhadores.update("");
-    // },
     initComponent: function() {
       this.callParent();
       this.add( this.concorrentes = Ext.widget("concorrentes", {region: 'center'}) );
       this.add( this.criarRegiao() );
-      //this.sorteioform.on("busca", this.reiniciar, this);
-      
 
-      
-            this.sorteioform.on("busca", 
-              Ext.Function.createSequence(this.concorrentes.listar, 
-                                          Ext.Function.pass(this.ganhadores.update, ""),
-                                          this.ganhadores), 
-              this.concorrentes);
+      this.sorteioform.on("buscar", 
+        Ext.Function.createSequence(this.concorrentes.listar, 
+                                    Ext.Function.pass(this.ganhadores.update, ""),
+                                    this.ganhadores), 
+        this.concorrentes);
 
     }
   });
